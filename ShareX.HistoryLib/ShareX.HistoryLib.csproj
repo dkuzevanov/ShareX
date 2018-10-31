@@ -323,6 +323,9 @@
     <PackageReference Include="ImageListView">
       <Version>11.0.4</Version>
     </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>11.0.2</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\magnifier.png" />

@@ -54,8 +54,6 @@ namespace ShareX
 
         private void MainForm_HandleCreated(object sender, EventArgs e)
         {
-            RunPuushTasks();
-
             UpdateControls();
 
             DebugHelper.WriteLine("Startup time: {0} ms", Program.StartTimer.ElapsedMilliseconds);
@@ -993,31 +991,6 @@ namespace ShareX
             }
         }
 
-        private void RunPuushTasks()
-        {
-            if (Program.PuushMode && Program.Settings.IsFirstTimeRun)
-            {
-                using (PuushLoginForm puushLoginForm = new PuushLoginForm())
-                {
-                    if (puushLoginForm.ShowDialog() == DialogResult.OK)
-                    {
-                        Program.DefaultTaskSettings.ImageDestination = ImageDestination.FileUploader;
-                        Program.DefaultTaskSettings.ImageFileDestination = FileDestination.Puush;
-                        Program.DefaultTaskSettings.TextDestination = TextDestination.FileUploader;
-                        Program.DefaultTaskSettings.TextFileDestination = FileDestination.Puush;
-                        Program.DefaultTaskSettings.FileDestination = FileDestination.Puush;
-
-                        SettingManager.WaitUploadersConfig();
-
-                        if (Program.UploadersConfig != null)
-                        {
-                            Program.UploadersConfig.PuushAPIKey = puushLoginForm.APIKey;
-                        }
-                    }
-                }
-            }
-        }
-
         private void HideNews()
         {
             pNews.Visible = false;
@@ -1591,11 +1564,6 @@ namespace ShareX
             TaskHelpers.OpenFTPClient();
         }
 
-        private void tsmiTweetMessage_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.TweetMessage();
-        }
-
         private void tsmiMonitorTest_Click(object sender, EventArgs e)
         {
             TaskHelpers.OpenMonitorTest();
@@ -2080,11 +2048,6 @@ namespace ShareX
         private void tsmiEditSelectedFile_Click(object sender, EventArgs e)
         {
             uim.EditImage();
-        }
-
-        private void tsmiSearchImage_Click(object sender, EventArgs e)
-        {
-            uim.SearchImage();
         }
 
         private void tsmiShowQRCode_Click(object sender, EventArgs e)

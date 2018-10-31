@@ -28,183 +28,44 @@ using System.ComponentModel;
 
 namespace ShareX.UploadersLib
 {
-    [Description("Image uploaders"), DefaultValue(Imgur)]
+    [Description("Image uploaders"), DefaultValue(FileUploader)]
     public enum ImageDestination
     {
-        [Description("Imgur")]
-        Imgur,
-        [Description("ImageShack")]
-        ImageShack,
-        [Description("TinyPic")]
-        TinyPic,
-        [Description("Flickr")]
-        Flickr,
-        [Description("Photobucket")]
-        Photobucket,
-        [Description("Google Photos")]
-        Picasa,
-        [Description("Twitter")]
-        Twitter,
-        [Description("Chevereto")]
-        Chevereto,
-        [Description("vgy.me")]
-        Vgyme,
         CustomImageUploader, // Localized
         FileUploader // Localized
     }
 
-    [Description("Text uploaders"), DefaultValue(Pastebin)]
+    [Description("Text uploaders"), DefaultValue(FileUploader)]
     public enum TextDestination
     {
-        [Description("Pastebin")]
-        Pastebin,
-        [Description("Paste2")]
-        Paste2,
-        [Description("Slexy")]
-        Slexy,
-        [Description("Paste.ee")]
-        Paste_ee,
-        [Description("GitHub Gist")]
-        Gist,
-        [Description("uPaste")]
-        Upaste,
-        [Description("Hastebin")]
-        Hastebin,
-        [Description("OneTimeSecret")]
-        OneTimeSecret,
-        [Description("Pastie")]
-        Pastie,
         CustomTextUploader, // Localized
         FileUploader // Localized
     }
 
-    [Description("File uploaders"), DefaultValue(Dropbox)]
+    [Description("File uploaders"), DefaultValue(Seafile)]
     public enum FileDestination
     {
-        [Description("Dropbox")]
-        Dropbox,
         [Description("FTP")]
         FTP,
-        [Description("OneDrive")]
-        OneDrive,
-        [Description("Google Drive")]
-        GoogleDrive,
-        [Description("puush")]
-        Puush,
-        [Description("Box")]
-        Box,
-        [Description("MEGA")]
-        Mega,
-        [Description("Amazon S3")]
-        AmazonS3,
-        [Description("Google Cloud Storage")]
-        GoogleCloudStorage,
-        [Description("Azure Storage")]
-        AzureStorage,
-        [Description("Backblaze B2")]
-        BackblazeB2,
-        [Description("Gfycat")]
-        Gfycat,
-        [Description("ownCloud / Nextcloud")]
-        OwnCloud,
-        [Description("MediaFire")]
-        MediaFire,
-        [Description("Pushbullet")]
-        Pushbullet,
-        [Description("SendSpace")]
-        SendSpace,
-        [Description("Ge.tt")]
-        Ge_tt,
-        [Description("Hostr")]
-        Localhostr,
         [Description("JIRA")]
         Jira,
-        [Description("Lambda")]
-        Lambda,
-        [Description("VideoBin")]
-        VideoBin,
-        [Description("Pomf")]
-        Pomf,
-        [Description("Uguu")]
-        Uguu,
         [Description("Seafile")]
         Seafile,
-        [Description("Streamable")]
-        Streamable,
-        [Description("s-ul")]
-        Sul,
-        [Description("Lithiio")]
-        Lithiio,
-        [Description("transfer.sh")]
-        Transfersh,
-        [Description("Plik")]
-        Plik,
-        [Description("YouTube")]
-        YouTube,
         SharedFolder, // Localized
         Email, // Localized
         CustomFileUploader // Localized
     }
 
-    [Description("URL shorteners"), DefaultValue(BITLY)]
+    [Description("URL shorteners"), DefaultValue(CustomURLShortener)]
     public enum UrlShortenerType
     {
-        [Description("bit.ly")]
-        BITLY,
-        [Description("is.gd")]
-        ISGD,
-        [Description("v.gd")]
-        VGD,
-        [Description("tinyurl.com")]
-        TINYURL,
-        [Description("turl.ca")]
-        TURL,
-        [Description("yourls.org")]
-        YOURLS,
-        [Description("adf.ly")]
-        AdFly,
-        [Description("qr.net")]
-        QRnet,
-        [Description("vurl.com")]
-        VURL,
-        [Description("2.gp")]
-        TwoGP,
-        [Description("Polr")]
-        Polr,
-        [Description("Firebase Dynamic Links")]
-        FirebaseDynamicLinks,
-        [Description("Kutt")]
-        Kutt,
         CustomURLShortener // Localized
     }
 
-    [Description("URL sharing services"), DefaultValue(Twitter)]
+    [Description("URL sharing services"), DefaultValue(Email)]
     public enum URLSharingServices
     {
         Email, // Localized
-        [Description("Twitter")]
-        Twitter,
-        [Description("Facebook")]
-        Facebook,
-        [Description("Google+")]
-        GooglePlus,
-        [Description("Reddit")]
-        Reddit,
-        [Description("Pinterest")]
-        Pinterest,
-        [Description("Tumblr")]
-        Tumblr,
-        [Description("LinkedIn")]
-        LinkedIn,
-        [Description("StumbleUpon")]
-        StumbleUpon,
-        [Description("Delicious")]
-        Delicious,
-        [Description("VK")]
-        VK,
-        [Description("Pushbullet")]
-        Pushbullet,
-        GoogleImageSearch, // Localized
         CustomURLSharingService // Localized
     }
 

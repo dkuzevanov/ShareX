@@ -184,34 +184,6 @@ namespace ShareX
 
         private static void UploadersConfigBackwardCompatibilityTasks()
         {
-            if (UploadersConfig.IsUpgradeFrom("11.6.0"))
-            {
-                if (UploadersConfig.DropboxURLType == DropboxURLType.Direct)
-                {
-                    UploadersConfig.DropboxUseDirectLink = true;
-                }
-
-                if (!string.IsNullOrEmpty(UploadersConfig.AmazonS3Settings.Endpoint))
-                {
-                    bool endpointFound = false;
-
-                    foreach (AmazonS3Endpoint endpoint in AmazonS3.Endpoints)
-                    {
-                        if (endpoint.Region != null && endpoint.Region.Equals(UploadersConfig.AmazonS3Settings.Endpoint, StringComparison.InvariantCultureIgnoreCase))
-                        {
-                            UploadersConfig.AmazonS3Settings.Endpoint = endpoint.Endpoint;
-                            UploadersConfig.AmazonS3Settings.Region = endpoint.Region;
-                            endpointFound = true;
-                            break;
-                        }
-                    }
-
-                    if (!endpointFound)
-                    {
-                        UploadersConfig.AmazonS3Settings.Endpoint = "";
-                    }
-                }
-            }
         }
 
         public static void SaveAllSettings()

@@ -213,9 +213,6 @@ namespace ShareX
                 case HotkeyType.FTPClient:
                     OpenFTPClient();
                     break;
-                case HotkeyType.TweetMessage:
-                    TweetMessage();
-                    break;
                 case HotkeyType.MonitorTest:
                     OpenMonitorTest();
                     break;
@@ -1061,11 +1058,6 @@ namespace ShareX
             }
         }
 
-        public static void SearchImage(string url)
-        {
-            new GoogleImageSearchSharingService().CreateSharer(null, null).ShareURL(url);
-        }
-
         public static void OCRImage(string filePath)
         {
             if (File.Exists(filePath))
@@ -1118,36 +1110,6 @@ namespace ShareX
             }
 
             MessageBox.Show(Resources.TaskHelpers_OpenFTPClient_Unable_to_find_valid_FTP_account_, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        public static void TweetMessage()
-        {
-            if (Program.UploadersConfig != null && Program.UploadersConfig.TwitterOAuthInfoList != null)
-            {
-                OAuthInfo twitterOAuth = Program.UploadersConfig.TwitterOAuthInfoList.ReturnIfValidIndex(Program.UploadersConfig.TwitterSelectedAccount);
-
-                if (twitterOAuth != null && OAuthInfo.CheckOAuth(twitterOAuth))
-                {
-                    Task.Run(() =>
-                    {
-                        using (TwitterTweetForm twitter = new TwitterTweetForm(twitterOAuth))
-                        {
-                            if (twitter.ShowDialog() == DialogResult.OK && twitter.IsTweetSent)
-                            {
-                                if (Program.MainForm.niTray.Visible)
-                                {
-                                    Program.MainForm.niTray.Tag = null;
-                                    Program.MainForm.niTray.ShowBalloonTip(5000, "ShareX - Twitter", Resources.TaskHelpers_TweetMessage_Tweet_successfully_sent_, ToolTipIcon.Info);
-                                }
-                            }
-                        }
-                    });
-
-                    return;
-                }
-            }
-
-            MessageBox.Show(Resources.TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         public static EDataType FindDataType(string filePath, TaskSettings taskSettings)

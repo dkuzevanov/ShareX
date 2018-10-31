@@ -736,13 +736,6 @@
             resources.ApplyResources(this.tsmiFTPClient, "tsmiFTPClient");
             this.tsmiFTPClient.Click += new System.EventHandler(this.tsmiFTPClient_Click);
             // 
-            // tsmiTweetMessage
-            // 
-            this.tsmiTweetMessage.Image = global::ShareX.Properties.Resources.Twitter;
-            this.tsmiTweetMessage.Name = "tsmiTweetMessage";
-            resources.ApplyResources(this.tsmiTweetMessage, "tsmiTweetMessage");
-            this.tsmiTweetMessage.Click += new System.EventHandler(this.tsmiTweetMessage_Click);
-            // 
             // tsmiMonitorTest
             // 
             this.tsmiMonitorTest.Image = global::ShareX.Properties.Resources.monitor;
@@ -1300,13 +1293,6 @@
             this.tsmiShareSelectedURL.Name = "tsmiShareSelectedURL";
             resources.ApplyResources(this.tsmiShareSelectedURL, "tsmiShareSelectedURL");
             // 
-            // tsmiSearchImage
-            // 
-            this.tsmiSearchImage.Image = global::ShareX.Properties.Resources.Google;
-            this.tsmiSearchImage.Name = "tsmiSearchImage";
-            resources.ApplyResources(this.tsmiSearchImage, "tsmiSearchImage");
-            this.tsmiSearchImage.Click += new System.EventHandler(this.tsmiSearchImage_Click);
-            // 
             // tsmiShowQRCode
             // 
             this.tsmiShowQRCode.Image = global::ShareX.Properties.Resources.barcode_2d;
@@ -1764,13 +1750,6 @@
             this.tsmiTrayFTPClient.Name = "tsmiTrayFTPClient";
             resources.ApplyResources(this.tsmiTrayFTPClient, "tsmiTrayFTPClient");
             this.tsmiTrayFTPClient.Click += new System.EventHandler(this.tsmiFTPClient_Click);
-            // 
-            // tsmiTrayTweetMessage
-            // 
-            this.tsmiTrayTweetMessage.Image = global::ShareX.Properties.Resources.Twitter;
-            this.tsmiTrayTweetMessage.Name = "tsmiTrayTweetMessage";
-            resources.ApplyResources(this.tsmiTrayTweetMessage, "tsmiTrayTweetMessage");
-            this.tsmiTrayTweetMessage.Click += new System.EventHandler(this.tsmiTweetMessage_Click);
             // 
             // tsmiTrayMonitorTest
             // 
